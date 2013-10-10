@@ -1,0 +1,1431 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>OMPromise Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">OMPromises </a></h1>
+				<a id="developerHome" href="../index.html">reaktor42</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">OMPromise Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
+	
+	<option value="//api/name/progress">&nbsp;&nbsp;&nbsp;&nbsp;progress</option>
+	
+	<option value="//api/name/result">&nbsp;&nbsp;&nbsp;&nbsp;result</option>
+	
+	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;state</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/all:">&nbsp;&nbsp;&nbsp;&nbsp;+ all:</option>
+	
+	<option value="//api/name/any:">&nbsp;&nbsp;&nbsp;&nbsp;+ any:</option>
+	
+	<option value="//api/name/chain:initial:">&nbsp;&nbsp;&nbsp;&nbsp;+ chain:initial:</option>
+	
+	<option value="//api/name/promiseWithError:">&nbsp;&nbsp;&nbsp;&nbsp;+ promiseWithError:</option>
+	
+	<option value="//api/name/promiseWithError:after:">&nbsp;&nbsp;&nbsp;&nbsp;+ promiseWithError:after:</option>
+	
+	<option value="//api/name/promiseWithResult:">&nbsp;&nbsp;&nbsp;&nbsp;+ promiseWithResult:</option>
+	
+	<option value="//api/name/promiseWithResult:after:">&nbsp;&nbsp;&nbsp;&nbsp;+ promiseWithResult:after:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/failed:">&nbsp;&nbsp;&nbsp;&nbsp;- failed:</option>
+	
+	<option value="//api/name/fulfilled:">&nbsp;&nbsp;&nbsp;&nbsp;- fulfilled:</option>
+	
+	<option value="//api/name/progressed:">&nbsp;&nbsp;&nbsp;&nbsp;- progressed:</option>
+	
+	<option value="//api/name/rescue:">&nbsp;&nbsp;&nbsp;&nbsp;- rescue:</option>
+	
+	<option value="//api/name/then:">&nbsp;&nbsp;&nbsp;&nbsp;- then:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Current State">Current State</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Return">Return</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Bind">Bind</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Callbacks">Callbacks</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Combinators">Combinators</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progress">progress</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/result">result</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/all:">all:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/any:">any:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chain:initial:">chain:initial:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/promiseWithError:">promiseWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/promiseWithError:after:">promiseWithError:after:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/promiseWithResult:">promiseWithResult:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/promiseWithResult:after:">promiseWithResult:after:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/failed:">failed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fulfilled:">fulfilled:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progressed:">progressed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rescue:">rescue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/then:">then:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="OMPromise Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">OMPromise Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">OMPromise.h<br />OMPromise.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Proxies the outcome of a deferred.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Current State" name="task_Current State"></a>
+						<h3 class="subsubtitle task-title">Current State</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
+		<span class="tooltip"><p>Current state.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
+		<span class="tooltip"><p>Maybe the promised result.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+		<span class="tooltip"><p>Maybe an error.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/progress">&nbsp;&nbsp;progress</a></code>
+		<span class="tooltip"><p>Progress of the underlying workload.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Return" name="task_Return"></a>
+						<h3 class="subsubtitle task-title">Return</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/promiseWithResult:">+&nbsp;promiseWithResult:</a></code>
+		<span class="tooltip"><p>Create a fulfilled promise.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/promiseWithResult:after:">+&nbsp;promiseWithResult:after:</a></code>
+		<span class="tooltip"><p>Create a promise which gets fulfilled after a certain delay.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/promiseWithError:">+&nbsp;promiseWithError:</a></code>
+		<span class="tooltip"><p>Create a failed promise.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/promiseWithError:after:">+&nbsp;promiseWithError:after:</a></code>
+		<span class="tooltip"><p>Create a promise which fails after a certain delay.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Bind" name="task_Bind"></a>
+						<h3 class="subsubtitle task-title">Bind</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/then:">&ndash;&nbsp;then:</a></code>
+		<span class="tooltip"><p>Create a new promise by binding the fulfilled <a href="#//api/name/result">result</a> to another promise.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rescue:">&ndash;&nbsp;rescue:</a></code>
+		<span class="tooltip"><p>Create a new promise by binding the <a href="#//api/name/error">error</a> reason to another promise.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Callbacks" name="task_Callbacks"></a>
+						<h3 class="subsubtitle task-title">Callbacks</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fulfilled:">&ndash;&nbsp;fulfilled:</a></code>
+		<span class="tooltip"><p>Register a block to be called when the promise gets fulfilled.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/failed:">&ndash;&nbsp;failed:</a></code>
+		<span class="tooltip"><p>Register a block to be called when the promise fails.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/progressed:">&ndash;&nbsp;progressed:</a></code>
+		<span class="tooltip"><p>Register a block to be called when the promise progresses.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Combinators" name="task_Combinators"></a>
+						<h3 class="subsubtitle task-title">Combinators</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/chain:initial:">+&nbsp;chain:initial:</a></code>
+		<span class="tooltip"><p>Create a promise chain as if you would do multiple then binds.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/any:">+&nbsp;any:</a></code>
+		<span class="tooltip"><p>Race for the first fulfilled promise in parallel.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/all:">+&nbsp;all:</a></code>
+		<span class="tooltip"><p>Wait for all promises to get fulfilled.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="subsubtitle method-title">error</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Maybe an error.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSError *error</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Maybe an error.</p>
+
+<p>Contains the reason in case the promise failed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/progress" title="progress"></a>
+	<h3 class="subsubtitle method-title">progress</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Progress of the underlying workload.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSNumber *progress</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Progress of the underlying workload.</p>
+
+<p>Describes the progress of the underyling workload as a floating point number in range
+[0, 1]. It only increases.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/result" title="result"></a>
+	<h3 class="subsubtitle method-title">result</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Maybe the promised result.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) id result</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Maybe the promised result.</p>
+
+<p>Contains the result in case the promise has been fulfilled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/state" title="state"></a>
+	<h3 class="subsubtitle method-title">state</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, readonly) OMPromiseState state</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Current state.</p>
+
+<p>May only change from @p OMPromiseStateUnfulfilled to either @p OMPromiseStateFailed or
+@p OMPRomiseStateFulfilled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/all:" title="all:"></a>
+	<h3 class="subsubtitle method-title">all:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Wait for all promises to get fulfilled.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)all:(NSArray *)<em>promises</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>promises</em></dt>
+			<dd><p>A sequence of promises.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Wait for all promises to get fulfilled.</p>
+
+<p>In case that all supplied promises get fulfilled, the promise itself returns
+an array containing all results for the supplied promises while respecting the
+correct order. Nil has been replaced by [NSNull null]. If any promise fails,
+the returned promise fails also.</p>
+
+<p>Similiar to chain: the workload of each promise is considered equal to
+determine the overall <a href="#//api/name/progress">progress</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/any:" title="any:"></a>
+	<h3 class="subsubtitle method-title">any:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Race for the first fulfilled promise in parallel.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)any:(NSArray *)<em>promises</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>promises</em></dt>
+			<dd><p>A sequence of promises.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Race for the first fulfilled promise in parallel.</p>
+
+<p>The new returned promise gets fulfilled if any of the supplied promises does.
+If no promise gets fulfilled, the returned promise fails.</p>
+
+<p>The <a href="#//api/name/progress">progress</a> aligns to the mostly progressed promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/chain:initial:" title="chain:initial:"></a>
+	<h3 class="subsubtitle method-title">chain:initial:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a promise chain as if you would do multiple then binds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)chain:(NSArray *)<em>thenHandlers</em> initial:(id)<em>result</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thenHandlers</em></dt>
+			<dd><p>Sequence of <a href="#//api/name/then:">then:</a> handler blocks.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>initial</em></dt>
+			<dd><p>Initial <a href="#//api/name/result">result</a> supplied to the first <a href="#//api/name/then:">then:</a> handler block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new promise describing the whole chain.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a promise chain as if you would do multiple then binds.</p>
+
+<p>It also respects the <a href="#//api/name/progress">progress</a> of each chain step by assuming an equal distribution
+of work over all items, such that it also updates the <a href="#//api/name/progress">progress</a> with respect to
+each individual step.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/promiseWithError:" title="promiseWithError:"></a>
+	<h3 class="subsubtitle method-title">promiseWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a failed promise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)promiseWithError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>Reason why the promise failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A failed promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a failed promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/promiseWithError:after:" title="promiseWithError:after:"></a>
+	<h3 class="subsubtitle method-title">promiseWithError:after:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a promise which fails after a certain delay.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)promiseWithError:(NSError *)<em>error</em> after:(NSTimeInterval)<em>delay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>Reason why the promise failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delay</em></dt>
+			<dd><p>Time span to wait before the promise fails.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A promise that will fail.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a promise which fails after a certain delay.</p>
+
+<p>After a certain amount of time the promise fails using the supplied <a href="#//api/name/error">error</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/promiseWithError:">+ promiseWithError:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/promiseWithResult:" title="promiseWithResult:"></a>
+	<h3 class="subsubtitle method-title">promiseWithResult:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a fulfilled promise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)promiseWithResult:(id)<em>result</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>result</em></dt>
+			<dd><p>The value to fulfil the promise.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A fulfiled promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a fulfilled promise.</p>
+
+<p>Simply wraps the supplied value inside a fulfiled promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/promiseWithResult:after:" title="promiseWithResult:after:"></a>
+	<h3 class="subsubtitle method-title">promiseWithResult:after:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a promise which gets fulfilled after a certain delay.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (OMPromise *)promiseWithResult:(id)<em>result</em> after:(NSTimeInterval)<em>delay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>result</em></dt>
+			<dd><p>The value to fulfil the promise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delay</em></dt>
+			<dd><p>Time span to wait before fulfilling the promise.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A promise that will get fulfilled.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a promise which gets fulfilled after a certain delay.</p>
+
+<p>After a certain amount of time the promise gets fulfilled using the supplied value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/promiseWithResult:">+ promiseWithResult:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/failed:" title="failed:"></a>
+	<h3 class="subsubtitle method-title">failed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a block to be called when the promise fails.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (OMPromise *)failed:(void ( ^ ) ( NSError *))<em>failHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failHandler</em></dt>
+			<dd><p>Block to be called.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The promise itself.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a block to be called when the promise fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fulfilled:" title="fulfilled:"></a>
+	<h3 class="subsubtitle method-title">fulfilled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a block to be called when the promise gets fulfilled.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (OMPromise *)fulfilled:(void ( ^ ) ( id result ))<em>fulfilHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fulfilHandler</em></dt>
+			<dd><p>Block to be called.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The promise itself.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a block to be called when the promise gets fulfilled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/progressed:" title="progressed:"></a>
+	<h3 class="subsubtitle method-title">progressed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a block to be called when the promise progresses.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (OMPromise *)progressed:(void ( ^ ) ( NSNumber *))<em>progressHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressHandler</em></dt>
+			<dd><p>Block to be called.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The promise itself.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a block to be called when the promise progresses.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rescue:" title="rescue:"></a>
+	<h3 class="subsubtitle method-title">rescue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new promise by binding the <a href="#//api/name/error">error</a> reason to another promise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (OMPromise *)rescue:(id ( ^ ) ( NSError *error ))<em>rescueHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rescueHandler</em></dt>
+			<dd><p>Block to be called once the promise failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a new promise by binding the <a href="#//api/name/error">error</a> reason to another promise.</p>
+
+<p>Similiar to <a href="#//api/name/then:">then:</a>, but the supplied block is called in case the promise fails. from
+which point on it behaves like <a href="#//api/name/then:">then:</a>. If the promise gets fulfilled the step is skipped.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/then:">&ndash; then:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/then:" title="then:"></a>
+	<h3 class="subsubtitle method-title">then:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new promise by binding the fulfilled <a href="#//api/name/result">result</a> to another promise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (OMPromise *)then:(id ( ^ ) ( id result ))<em>thenHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thenHandler</em></dt>
+			<dd><p>Block to be called once the promise gets fulfilled.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new promise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a new promise by binding the fulfilled <a href="#//api/name/result">result</a> to another promise.</p>
+
+<p>The supplied block gets called in case the promise gets fulfilled. The block can return
+a simple value or another block, in both cases the promise returned by this method
+is bound to the <a href="#//api/name/result">result</a> of the block.</p>
+
+<p>If the promise fails, the chain is short-circuited and the resulting promise fails too.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/rescue:">&ndash; rescue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">OMPromise.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 reaktor42. All rights reserved. (Last updated: 2013-10-09)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
