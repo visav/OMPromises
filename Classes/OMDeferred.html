@@ -13,7 +13,7 @@
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
 				<h1><a id="libraryTitle" href="../index.html">OMPromises </a></h1>
-				<a id="developerHome" href="../index.html">reaktor42</a>
+				<a id="developerHome" href="../index.html">Oliver Mader</a>
 			</div>
 			
 			<div id="title" role="banner">
@@ -73,7 +73,9 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialization">Initialization</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creation">Creation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing the underlying promise">Accessing the underlying promise</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Change state">Change state</a></span></li>
 	
@@ -140,11 +142,19 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents a bunch of work.</p>
+						<p>An OMDeferred is an abstract construct to control the outcome of an aligned
+<a href="../Classes/OMPromise.html">OMPromise</a>, which is used to proxy the outcome of an asynchronous operation.</p>
 
-<p>The bunch of work can progress and either fail or be fulfilled. Once failed or
-fulfilled the <a href="#//api/name/deferred">deferred</a> is done. Meaning it cannot progress, fail or be fulfilled
-again.</p>
+<p>In order to model a long-running asynchronous operation, you would create an instance
+of OMDeferred using <a href="#//api/name/deferred">deferred</a>. You use this instance to control the state of the
+underlying <a href="../Classes/OMPromise.html">OMPromise</a>, accessed by <a href="#//api/name/promise">promise</a>.</p>
+
+<p>You might call <a href="#//api/name/progress:">progress:</a> multiple times to keep the user informed, followed by a final
+call to either <a href="#//api/name/fulfil:">fulfil:</a>, in case everything went as expected, or <a href="#//api/name/fail:">fail:</a> otherwise.</p>
+
+<p>It&rsquo;s important to understand that the OMDeferred/<a href="../Classes/OMPromise.html">OMPromise</a> is sealed, once its stated
+has been changed by calling <a href="#//api/name/fulfil:">fulfil:</a> or <a href="#//api/name/fail:">fail:</a>. After that calls to <a href="#//api/name/progress:">progress:</a>, <a href="#//api/name/fulfil:">fulfil:</a>
+or <a href="#//api/name/fail:">fail:</a> result in an exception.</p>
 					</div>
 					
 					
@@ -156,18 +166,26 @@ again.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Initialization" name="task_Initialization"></a>
-						<h3 class="subsubtitle task-title">Initialization</h3>
+						<a title="Creation" name="task_Creation"></a>
+						<h3 class="subsubtitle task-title">Creation</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/deferred">+&nbsp;deferred</a></code>
-		<span class="tooltip"><p>Returns a new instance of the deferred.</p></span>
+		<span class="tooltip"><p>Create and return a new deferred.</p></span>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Accessing the underlying promise" name="task_Accessing the underlying promise"></a>
+						<h3 class="subsubtitle task-title">Accessing the underlying promise</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/promise">&ndash;&nbsp;promise</a></code>
 		<span class="tooltip"><p>Returns the associated promise.</p></span>
@@ -225,7 +243,7 @@ again.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a new instance of the deferred.</p>
+		<p>Create and return a new deferred.</p>
 	</div>		
 	
     
@@ -242,11 +260,7 @@ again.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new instance of the deferred.</p>
-
-<p>Internally, a <a href="#//api/name/reference">reference</a> to this newly created deferred is stored until it is either
-fulfilled or failed. So ensure to finalize all deferred either way in order to prevent
-memory leaks.</p>
+		<p>Create and return a new deferred.</p>
 	</div>
 	
 	
@@ -405,7 +419,7 @@ memory leaks.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)progress:(NSNumber *)<em>progress</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)progress:(float)<em>progress</em></code></div>
 
     
 	
@@ -429,7 +443,8 @@ memory leaks.</p>
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Update the progress.</p>
 
-<p>The new progress has to be higher than the previous one.</p>
+<p>The new progress has to be higher than the previous one. Equal values are skipped,
+but lower values raise an exception.</p>
 	</div>
 	
 	
@@ -502,7 +517,7 @@ memory leaks.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 reaktor42. All rights reserved. (Last updated: 2013-10-09)</span><br />
+						<p><span class="copyright">&copy; 2013 Oliver Mader. All rights reserved. (Last updated: 2013-10-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
